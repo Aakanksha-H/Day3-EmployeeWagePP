@@ -12,7 +12,7 @@ public class EmployeeWage {
         int totalWorkingHours = 0;
 
         // Computation
-        while (totalWorkingDays < 20) {
+        while (totalWorkingHours < 100 && totalWorkingDays < 20) {
             int dayCheck = (int) (Math.round(Math.random() * 10) % 3);
 
             switch (dayCheck) {
@@ -26,6 +26,9 @@ public class EmployeeWage {
 
                     System.out.println("Employee is Present Today" + "\r\n" + "Total Wage for Today = " + empDailyWage);
                     System.out.println("Employee total working hours = " + totalWorkingHours );
+
+                    if(totalWorkingHours > 100)
+                        totalWorkingHours = totalWorkingHours - workingHours;
                     break;
 
                 case PART_TIME:
@@ -43,9 +46,10 @@ public class EmployeeWage {
                 default:
                     System.out.println("Employee is Absent");
             }
-            System.out.println(totalWorkingDays);
+            System.out.println("Employee total working days = " + totalWorkingDays);
             int totalWage = totalWorkingHours * DAILY_WAGE;
-            System.out.println("Wage for an month = " + totalWage);
+            System.out.println("Employee total working hours = " + totalWorkingHours);
+            System.out.println("Wage for an month = " + totalWage + "\r\n");
         }
     }
 }
